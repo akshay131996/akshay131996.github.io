@@ -69,6 +69,27 @@
   .btn:hover{background:linear-gradient(#fff,#eee);text-decoration:none}
 
   .marq{background:#fffbe6;border:1px solid #e8d98a;padding:5px 8px;font-size:11px;color:#7a6320;margin-bottom:10px}
+  /* ---- timeline ---- */
+  .tl{position:relative;padding-left:22px}
+  .tl:before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;
+    background:linear-gradient(#8aa8dc,#d76a9c)}
+  .ev{position:relative;padding-bottom:14px}
+  .ev:last-child{padding-bottom:2px}
+  .ev:before{content:"";position:absolute;left:-20px;top:3px;width:9px;height:9px;border-radius:50%;
+    background:#fff;border:2px solid #5b7cb8}
+  .ev.hi:before{border-color:#c9558b;background:#fde6f0}
+  .ev .yr{font-size:10px;color:#8a97ae;font-weight:bold;letter-spacing:.5px}
+  .ev .hd{font-size:12px;font-weight:bold;color:#3b5998;margin:1px 0}
+  .ev.hi .hd{color:#c1275e}
+  .ev .bd{font-size:11px;line-height:1.5;color:#444}
+  .shot{margin-top:6px;border:1px solid #9bb3dd;background:#eef3fb;padding:3px;display:inline-block;max-width:100%}
+  .shot img{display:block;max-width:100%;height:auto}
+  .shot .cap{font-size:9.5px;color:#7d8ba8;padding:3px 2px 1px;line-height:1.35}
+  .pair{display:flex;gap:6px;flex-wrap:wrap}
+  .pair .shot{flex:1;min-width:230px}
+  .badge{display:inline-block;background:#fbeef4;border:1px solid #eccada;color:#96285a;
+    font-size:9.5px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+
   .foot{text-align:center;color:#7d8ba8;font-size:10px;margin-top:14px;line-height:1.7}
   .hit{font-family:"Courier New",monospace;background:#222;color:#6f6;padding:1px 5px;letter-spacing:2px;border:1px solid #000}
 </style>
@@ -237,6 +258,91 @@
           </ul>
         </div>
 
+      </div></div>
+
+      <div class="box"><h3>timeline</h3><div class="in">
+        <div class="tl">
+
+          <div class="ev">
+            <div class="yr">FEB 2018 — MAY 2019</div>
+            <div class="hd">IBM · Security Delivery Specialist</div>
+            <div class="bd">Role-based access control across Active Directory, DBMS and UNIX. Change management, impact assessment, access reviews.</div>
+          </div>
+
+          <div class="ev">
+            <div class="yr">AUG 2019 — MAY 2020</div>
+            <div class="hd">SS Automation Solutions · Computer Vision Engineer</div>
+            <div class="bd">First production CV work. CNNs optimised for NVIDIA Jetson via DIGITS and the Transfer Learning Toolkit; embedded image-processing hardware for multi-camera industrial vision. ~40% efficiency gain on embedded targets.</div>
+          </div>
+
+          <div class="ev">
+            <div class="yr">DEC 2020 — JAN 2022</div>
+            <div class="hd">Sentry AI · Backend Software Engineer</div>
+            <div class="bd">CNN models to production on AWS EC2 and Azure VMs. Cut infrastructure cost <b>5×</b> by moving GPU workloads to CPU; <b>halved</b> processing time with ElastiCache/Redis image caching. Secure inter-cloud VPN between AWS VPC and Azure VNets.</div>
+          </div>
+
+          <div class="ev">
+            <div class="yr">FEB 2022 — FEB 2023</div>
+            <div class="hd">Sentry AI · Solutions Architect &amp; Customer Success Lead</div>
+            <div class="bd">Took the platform from engineering into the customer relationship. <b>+65% net revenue retention</b>, <b>+300% connected cameras</b>, and a multi-page app re-architected into an SPA.</div>
+          </div>
+
+          <div class="ev">
+            <div class="yr">APR — JUN 2023</div>
+            <div class="hd">Cisco (via TEKsystems) · Python Developer</div>
+            <div class="bd">Automated and manual test design against defined procedures.</div>
+          </div>
+
+          <div class="ev">
+            <div class="yr">JUL 2023 — JAN 2026</div>
+            <div class="hd">Perfios · Senior Software Engineer</div>
+            <div class="bd">Led an <b>R → Python</b> migration of the core data aggregation and analytics engine, cutting processing cost ~50% and rebuilding it as reusable, extensible components.</div>
+          </div>
+
+          <div class="ev hi">
+            <div class="yr">2026 · BERLIN</div>
+            <div class="hd">Traffic Lens <span class="badge">mAP50 0.280</span></div>
+            <div class="bd">Vehicle detection, tracking, line-crossing counts and calibrated speed on 4K motorway footage. YOLO26 fine-tuned on VisDrone — <b>~11×</b> over a properly remapped baseline.</div>
+            <div class="shot">
+              <img src="https://akshay131996.github.io/traffic-lens/outputs/media/traffic_demo.gif"
+                   alt="Annotated motorway footage: per-vehicle IDs, motion traces, line-crossing counter and speed labels" loading="lazy">
+              <div class="cap">YOLO26n + ByteTrack — IDs, motion traces, crossing counter, homography-derived speeds</div>
+            </div>
+            <div class="shot" style="margin-top:5px">
+              <img src="https://akshay131996.github.io/traffic-lens/outputs/visdrone/results.png"
+                   alt="VisDrone training curves over 50 epochs" loading="lazy">
+              <div class="cap">50 epochs on VisDrone. The first run stopped at 20 with the curve still climbing — a schedule artifact reported as a result.</div>
+            </div>
+          </div>
+
+          <div class="ev hi">
+            <div class="yr">2026 · BERLIN</div>
+            <div class="hd">Soccer Analytics <span class="badge">HOTA 52.4 / 81.7</span></div>
+            <div class="bd">Detection, tracking, unsupervised team assignment and pitch homography — evaluated against <b>SoccerNet ground truth</b> with TrackEval rather than a proxy. Given oracle boxes the tracker lands <b>4 points off published state of the art</b>.</div>
+            <div class="pair">
+              <div class="shot">
+                <img src="img/soccer_v1.jpg" alt="Early run: team colours inconsistent across kits" loading="lazy">
+                <div class="cap"><b>before</b> — team decided from one crop at track birth, so labels land on both kits</div>
+              </div>
+              <div class="shot">
+                <img src="img/soccer_v4.jpg" alt="Final run: consistent team colours, roles from the detector" loading="lazy">
+                <div class="cap"><b>after</b> — grass masked out, team voted over 15 frames, keepers and referees detected as roles</div>
+              </div>
+            </div>
+            <div class="shot" style="margin-top:5px">
+              <img src="img/soccer_curves.png" alt="SoccerNet training curves" loading="lazy">
+              <div class="cap">Retrained on 4,275 SoccerNet frames. 14× the data bought 2.8 HOTA over no fine-tune at all — the real return was the goalkeeper and referee classes.</div>
+            </div>
+          </div>
+
+          <div class="ev hi">
+            <div class="yr">2026 · ONGOING</div>
+            <div class="hd">Writing up the failures</div>
+            <div class="bd">Five interactive write-ups, including a post-mortem on a detector that scored <b>0.958 AP</b> on its validation set and made the pipeline <b>2.5× worse</b>.
+              <a href="https://akshay131996.github.io/soccer-analytics/validation-trap.html">read it →</a></div>
+          </div>
+
+        </div>
       </div></div>
 
       <div class="box pink"><h3>testimonials <span style="font-weight:normal;font-size:10px">— what the numbers say</span></h3><div class="in">
